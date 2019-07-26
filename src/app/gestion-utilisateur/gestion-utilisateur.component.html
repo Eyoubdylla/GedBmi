@@ -1,0 +1,33 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <button class="btn btn-danger" (click)="OnNewUser()">nouveau utilisateur</button>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped" *ngIf="listUser">
+      <tr>
+        <td>Username</td>
+        <td>Email</td>
+        <td>Role</td>
+        <td>remove</td>
+        <td>update</td>
+      </tr>
+      <tr *ngFor=" let u of listUser._embedded.uitisateurs">
+        <td>{{u.username}}</td>
+        <td>{{u.email}}</td>
+        <td>{{u.role}}</td>
+        <td>
+          <button class="btn btn-danger" (click)="removUser(u)">
+            <span class="glyphicon glyphicon-remove"></span>
+          </button>
+        </td>
+        <td>
+          <button class="btn btn-danger" (click)="editUser(u)">
+            <span class="glyphicon glyphicon-edit"></span>
+          </button>
+        </td>
+      </tr>
+
+    </table>
+  </div>
+</div>
+

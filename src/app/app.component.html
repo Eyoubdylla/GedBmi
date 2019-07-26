@@ -1,0 +1,76 @@
+<div class="container">
+  <div class="jumbotron" *ngIf="isAuthenticated()">
+      <br><br><br><br><br><br><br><br><br><br>
+    <div id="menu_area" class="menu-area">
+      <div class="container">
+        <div class="row">
+          <nav class="navbar navbar-light navbar-expand-lg mainmenu">
+            <div class="collapse navbar-collapse" id="oNavigation">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Accueil</a></li>
+                <li><a href="#">DEPARTEMENT</a></li>
+                <li ><a href="#">AGENCES</a></li>
+                <li class="dropdown" *ngIf="!isAdmin()">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">DOSSIERS<b class="caret"></b> </a>
+                  <ul class="dropdown-menu">
+                    <li ><a href="#">cree Dossier</a></li>
+                    <li class="dropdown-submenu">
+                      <a tabindex="-1" href="#" >Gestion Document</a>
+                      <ul class="dropdown-menu">
+                        <li *ngIf="isEmployer()"><a href="#">cree un Document</a></li>
+                        <li *ngIf="isGetionnaire()"><a  href="#">Modification de Document</a></li>
+                        <li *ngIf="isGetionnaire()"><a href="#">Recherche Document</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#">list dossier</a></li>
+                  </ul>
+                </li>
+                <li class="dropdown" *ngIf="isAdmin()">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">PARAMETRAGE<b class="caret"></b> </a>
+                  <ul class="dropdown-menu">
+                    <li class="dropdown-submenu">
+                      <a tabindex="-1" routerLink="/gestionUser">Gestion utilisateurs</a>
+                      <ul class="dropdown-menu">
+                        <li><a routerLink="/gestionUser">Gestion utilisateur</a></li>
+                      </ul>
+                    </li>
+                    <li ><a href="#">Gestion categories</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">About</a></li>
+              </ul>
+              <ul class="nav navbar-nav pull-right">
+                <li>
+                  <a class="btn" (click)="logOut()" routerLink="/Deconnection">Deconnection<span class="glyphicon glyphicon-log-out"></span></a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-9">
+        <router-outlet >
+        <br><br>
+        </router-outlet>
+      </div>
+      <div class="col-sm-3" *ngIf="isAuthenticated()">
+         <!--<form action="" class="ml-auto">-->
+           <!--<div class="input-group">-->
+             <!--<input type="search" name="q" placeholder="Recherche" class="form-control"/>-->
+             <!--<div class="input-group-append">-->
+               <!--<button class="btn btn-primary">-->
+                 <!--<span class="fas fa-search"></span>-->
+               <!--</button>-->
+             <!--</div>-->
+           <!--</div>-->
+         <!--</form>-->
+        <h2>hhhaheuhjdahf </h2>
+      </div>
+    </div>
+  </div>
+</div>
+

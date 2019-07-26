@@ -1,0 +1,57 @@
+<!--<div class="container ">-->
+  <!--<div class="row">-->
+    <!--<div class="col-md-4 col-sm-4 col-xs-12"></div>-->
+    <!--<div class="col-md-4 col-sm-4 col-xs-12">-->
+      <!--<div class="form-contaire">-->
+        <!--<form #f="ngForm" (submit)="onLogin(f.value)">-->
+          <!--<div class="form-group">-->
+            <!--<label class="control-label">Username</label>-->
+            <!--<input type="text" name="username" ngModel class="form-control">-->
+          <!--</div>-->
+          <!--<div class="form-group">-->
+            <!--<label class="control-label">Password</label>-->
+            <!--<input type="password" name="password" ngModel class="form-control">-->
+          <!--</div>-->
+          <!--<button type="submit"  class="btn btn-primary">Login</button>-->
+        <!--</form>-->
+      <!--</div>-->
+    <!--</div>-->
+    <!--<div class="col-lg-4"></div>-->
+  <!--</div>-->
+<div class="container">
+  <div class="card card-container">
+    <div class="panel-primary">
+      <div class="panel-heading center-block -align-center">
+        Authntification
+      </div>
+      <br>
+       <!--<img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" />-->
+      <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+      <p id="profile-name" class="profile-name-card"></p>
+
+      <form name="form-signin" (ngSubmit)="f.form.valid && onLogin(f.value)" #f="ngForm" novalidate>
+        <div class="alert alert-danger" role="alert" *ngIf="errorMessage">{{errorMessage}}</div>
+        <span id="reauth-email" class="reauth-email"></span>
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+          <label for="username">Username</label>
+          <input type="text" class="form-control" id="username" name="username" ngModel #username="ngModel" required />
+          <div *ngIf="f.submitted && !username.valid" class="help-block">an valid email is required</div>
+        </div>
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" name="password" ngModel #password="ngModel" required />
+          <div *ngIf="f.submitted && !password.valid" class="help-block">Password is required</div>
+        </div>
+        <div id="remember" class="checkbox">
+
+        </div>
+        <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
+      </form><!-- /form -->
+      <!--<a [routerLink]="['/register']" class="btn btn-link">Create new Account!</a>-->
+    </div>
+    </div><!-- /card-container -->
+</div><!-- /container -->
+
+
+
+
