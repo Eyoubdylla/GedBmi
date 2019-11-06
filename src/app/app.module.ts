@@ -10,6 +10,10 @@ import { GestionUtilisateurComponent } from './gestion-utilisateur/gestion-utili
 import {AngularFontAwesomeModule} from "angular-font-awesome";
 import { RegistrationComponent } from './registration/registration.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
+import { DossierComponent } from './dossier/dossier.component';
+import { MdfierDocmtComponent } from './dossier/gestionDocmt/mdfier-docmt/mdfier-docmt.component';
+import { RechDocumtComponent } from './dossier/gestionDocmt/rech-documt/rech-documt.component';
+import { ListDossierComponent } from './dossier/list-dossier/list-dossier.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,6 +21,10 @@ import { EditUserComponent } from './edit-user/edit-user.component';
     GestionUtilisateurComponent,
     RegistrationComponent,
     EditUserComponent,
+    DossierComponent,
+    MdfierDocmtComponent,
+    RechDocumtComponent,
+    ListDossierComponent,
   ],
   imports: [
     BrowserModule,
