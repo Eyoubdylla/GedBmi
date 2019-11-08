@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {DossierService} from "../../sevices/dossier/dossier.service";
 
 @Component({
   selector: 'app-list-dossier',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListDossierComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dossierService: DossierService) { }
 
   ngOnInit() {
+  }
+  getDossiers(){
+    this.dossierService.getAll().then(res=>{
+      console.log(res);
+    })
   }
 
 }
