@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {environment} from "../../../environments/environment";
 import {Dossier} from "../../classes/dossier";
 
@@ -11,10 +11,15 @@ export class DossierService {
   constructor(private http:HttpClient) {
   }
   getAll() : Promise<Dossier[]>{
-    return this.http.get<Dossier[]>(this.base_url+'/getAll').toPromise();
+    const headers =  new HttpHeaders({
+    });
+    headers.append('Content-Type', 'application/json');
+    return this.http.get<Dossier[]>(this.base_url+'/getAll', {headers: headers}).toPromise();
   }
   addDossier(dossier: Dossier){
     console.log('go');
-    return this.http.post<Dossier>(this.base_url+'/add', dossier);
+    let headers = new Headers();
+   //
+    return this.http.post<Dossier>(this.base_url+'/add', dossier).toPromise();
   }
 }
