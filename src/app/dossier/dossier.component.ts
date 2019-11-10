@@ -14,7 +14,9 @@ export class DossierComponent implements OnInit {
   }
 
   OnCreate(data){
-    console.log(data);
+    this.dossierService.addDossier(data).then(resp=>{
+      console.log(resp.id +' '+resp.dateCreation);
+    })
   }
 
 }

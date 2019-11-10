@@ -11,6 +11,10 @@ export class DossierService {
   constructor(private http:HttpClient) {
   }
   getAll() : Promise<Dossier[]>{
-    return this.http.get<Dossier[]>(this.base_url).toPromise();
+    return this.http.get<Dossier[]>(this.base_url+'/getAll').toPromise();
+  }
+  addDossier(dossier: Dossier){
+    console.log('go');
+    return this.http.post<Dossier>(this.base_url+'/add', dossier);
   }
 }

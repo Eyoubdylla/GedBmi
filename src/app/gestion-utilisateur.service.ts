@@ -3,7 +3,7 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {JwtHelperService} from "@auth0/angular-jwt";
 import {AuthenticationService} from "./authentication.service";
 import {Observable} from "rxjs";
-import {Utilsateur} from "./classes/utilsateur";
+import {Utilisateur} from "./classes/utilisateur";
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +20,7 @@ export class GestionUtilisateurService {
     let headers = new HttpHeaders({'authorization':this.authService.jwt})
     return this.http.delete(url,{headers:headers})
   }
-  GetRessource(url):Observable<Utilsateur>{
+  GetRessource(url):Observable<Utilisateur>{
     // @ts-ignore
     return this.http.get(url);
   }

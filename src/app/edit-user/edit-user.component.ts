@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {GestionUtilisateurService} from "../gestion-utilisateur.service";
-import {Utilsateur} from "../classes/utilsateur";
+import {Utilisateur} from "../classes/utilisateur";
 
 @Component({
   selector: 'app-edit-user',
@@ -9,7 +9,7 @@ import {Utilsateur} from "../classes/utilsateur";
   styleUrls: ['./edit-user.component.css']
 })
 export class EditUserComponent implements OnInit {
-  private courrentUser:Utilsateur;
+  private courrentUser:Utilisateur;
   private url:string;
   constructor(private router:Router, private activatedRoute:ActivatedRoute,
               private utilisateurService:GestionUtilisateurService) { }

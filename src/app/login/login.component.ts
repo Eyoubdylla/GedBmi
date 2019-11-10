@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {CookieService} from "ngx-cookie-service";
 import { AuthenticationService } from '../authentication.service';
 import { Router } from '@angular/router';
 
@@ -9,17 +10,17 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private authService:AuthenticationService ,private router: Router ) { }
+  constructor(private authService:AuthenticationService ,private router: Router, private cookieServive: CookieService, ) { }
 
   ngOnInit() {
   }
   onLogin(data){
+    const token = btoa(data.username + ':' + data.password);
+    this.cookieServive.set('tokenlogin', token);
     this.authService.login(data)
     .subscribe(resp=>{
-      let jwt=resp.headers.get('Authorization');
-      this.authService.saveToken(jwt);
-      console.log(jwt)
-      this.router.navigateByUrl("/");
+      this.authService.saveToken(resp.body);
+      this.router.navigateByUrl("/ListeDossier");
     })
   }
   // login(){

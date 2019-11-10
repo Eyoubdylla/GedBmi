@@ -1,7 +1,6 @@
-import { isDate } from '@angular/common/src/i18n/format_date';
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute, Router} from "@angular/router";
 import { AuthenticationService } from './authentication.service';
-import { Router } from '@angular/router';
 
 
 @Component({
@@ -10,12 +9,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
-  
+
   title = 'FrontendGed';
-  constructor(private router: Router ,private authService:AuthenticationService){}
+  constructor(private router: Router ,private authService:AuthenticationService, private route:ActivatedRoute){}
 
   ngOnInit(): void {
-   // this.authService.loadToken();
+    // this.authService.loadToken();
     //throw new Error("Method not implemented.");
   }
   isAdmin(){
