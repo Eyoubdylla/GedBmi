@@ -1,0 +1,21 @@
+<hr />
+<h3> Create Document </h3>
+<div [hidden]="onSubmit()" style="...">
+  <div class="form-group">
+    <input type="text" class="form-control" required  name="name" [(ngModel)]="document.titre" placeholder="Name">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" required  name="typefile" [(ngModel)]="document.typefile" placeholder="type file">
+  </div>
+  <div class="form-group">
+    <input name="dateCreation" required [(ngModel)]="document.DataCreation" class="form-control" placeholder="date Creation">
+  </div>
+  <div class="form-group">
+    <input type="file" name="file" (change)="onFileSelected($event)">
+  </div>
+  <div class="form-group">
+    <button type="submit" class="btn btn-success">Upload</button>
+  </div>
+</div>
+

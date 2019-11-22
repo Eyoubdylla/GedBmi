@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {GestionUtilisateurService} from "../gestion-utilisateur.service";
-import {Utilisateur} from "../classes/utilisateur";
+import {Utilisateur} from "../model/utilisateur";
+
 
 @Component({
   selector: 'app-edit-user',

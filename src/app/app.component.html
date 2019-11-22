@@ -1,48 +1,21 @@
 <div class="container">
   <div *ngIf="isAuthenticated()">
     <div class="jumbotron">
-      <br><br><br><br><br><br><br><br><br><br>
+      <br><br><br><br><br><br><br><br>
       <div id="menu_area" class="menu-area">
         <div class="container">
           <div class="row">
             <nav class="navbar navbar-light navbar-expand-lg mainmenu">
               <div class="collapse navbar-collapse" id="oNavigation">
                 <ul class="nav navbar-nav">
-                  <li class="active"><a href="#">Accueil</a></li>
-                  <li><a routerLink="gestionDossier">DEPARTEMENT</a></li>
-                  <li><a href="#">AGENCES</a></li>
-                  <li class="dropdown" *ngIf="!isAdmin()">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">DOSSIERS<b class="caret"></b> </a>
-                    <ul class="dropdown-menu">
-                      <li><a routerLink="/gestionDossier">cree Dossier</a></li>
-                      <li class="dropdown-submenu">
-                        <a tabindex="-1" routerLink="gestionDossier">Gestion Document</a>
-                        <ul class="dropdown-menu">
-                          <li *ngIf="isEmployer()"><a href="#">cree un Document</a></li>
-                          <li *ngIf="isGetionnaire()"><a routerLink="MdfierDoc">Modification de Document</a></li>
-                          <li *ngIf="isGetionnaire()"><a routerLink="RechDoc">Recherche Document</a></li>
-                        </ul>
-                      </li>
-                      <li><a routerLink="ListeDossier">list dossier</a></li>
-                    </ul>
-                  </li>
-                  <li class="dropdown" *ngIf="isAdmin()">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">PARAMETRAGE<b class="caret"></b> </a>
-                    <ul class="dropdown-menu">
-                      <li class="dropdown-submenu">
-                        <a tabindex="-1" routerLink="/gestionUser">Gestion utilisateurs</a>
-                        <ul class="dropdown-menu">
-                          <li><a routerLink="/gestionUser">Gestion utilisateur</a></li>
-                        </ul>
-                      </li>
-                      <li><a href="#">Gestion categories</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="#">About</a></li>
+                  <li><a routerLink="Document">DOCUMENTS</a></li>
+                  <li><a routerLink="GroupeDocumComponent">GROUPS DES DOCUMEMTS</a></li>
+                  <li><a routerLink="Dossier">DOSSIER</a></li>
+                  <li><a routerLink="GrpsUtilisateurs">GROUPS DES UTILISATEUR</a></li>
                 </ul>
                 <ul class="nav navbar-nav pull-right">
                   <li>
-                    <a class="btn" (click)="logOut()" routerLink="/Deconnection">Deconnection<span
+                    <a class="btn" (click)="logOut()" routerLink="/Deconnection">DECONNECTION<span
                       class="glyphicon glyphicon-log-out"></span></a>
                   </li>
                 </ul>

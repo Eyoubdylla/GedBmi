@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
 import {MatTableDataSource} from "@angular/material/table";
-import {Dossier} from "../../classes/dossier";
-import {Utilisateur} from "../../classes/utilisateur";
+
 import {DossierService} from "../../sevices/dossier/dossier.service";
+import {Dossier} from "../../model/Dossier";
 
 @Component({
   selector: 'app-list-dossier',
@@ -12,7 +12,7 @@ import {DossierService} from "../../sevices/dossier/dossier.service";
 })
 export class ListDossierComponent implements OnInit {
 
-  displayedColumns: string[] = ['actions', 'nom', 'dateCreation', 'Emplacement', ];
+  displayedColumns: string[] = ['id', 'nom', 'dateCreation', 'Emplacement'];
   dataSource: MatTableDataSource<Dossier>;
   formFilter = new FormGroup({
     search : new FormControl()
@@ -27,9 +27,9 @@ export class ListDossierComponent implements OnInit {
     this.getDossiers();
   }
   getDossiers(){
-    this.dossierService.getAll().then(res=> {
-      console.log(res);
+    this.dossierService.getAllDossier().subscribe(res=> {
       this.dataSource = new MatTableDataSource<Dossier>(res);
+      console.log(this.dataSource);
 
     })
   }

@@ -3,8 +3,8 @@ import {HttpClient, HttpResponse} from '@angular/common/http';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { Token } from '@angular/compiler/src/ml_parser/lexer';
 import {stringify} from "querystring";
-import {Roles} from "./classes/roles";
-import {Utilisateur} from "./classes/utilisateur";
+import {Roles} from "./model/Roles";
+
 
 @Injectable({
   providedIn: 'root'
